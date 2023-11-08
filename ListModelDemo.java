@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.list;
+import java.util.List;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
@@ -28,7 +28,7 @@ public class ListModelDemo {
 
         label = new JLabel("Select a fruit: ");
 
-        fruit.addListSelectionListenerListener(new ListSelectionListener() {
+        fruit.addListSelectionListener(new ListSelectionListener() {
             public void valueChanged(ListSelectionEvent event) {
                 String selected = "";
 
@@ -37,7 +37,7 @@ public class ListModelDemo {
                 if (values.size() == 0) label.setText("Please make a selection.");
                 else {
                     for (int i = 0; i < values.size(); i++) {
-                        selected += values.get(i) + "br";
+                        selected += values.get(i) + "<br>";
                     }
                     label.setText("<html>You selected: <br>" + selected);
                 }
@@ -54,15 +54,38 @@ public class ListModelDemo {
                 if (values.size() == 0) label.setText("No fruit selected for purchase.");
                 else {
                     for (int i = 0; i < values.size(); i++) {
-                        purchased += values.get(i) + "br";
+                        purchased += values.get(i) + "<br>";
                     }
                     label.setText("<html>You purchased: <br>" + purchased);
                 }
             }
         });
 
-        frame.add(label);
+        manage = new JButton("Add Fruit");
+        manage.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent event) {
+                DefaultListModel<String> reference = (DefaultListModel<String>) fruit.getModel();
+
+                if (reference.getSize() > 4) {
+                    for (int i = 6; i > 3; i--) {
+                        reference.remove(i);
+                        manage.setText("Add Fruit");
+                    }
+                }
+                else {
+                    reference.addElement("banana");
+                    reference.addElement("strawberry");
+                    reference.addElement("lemon");
+
+                    manage.setText("Remove Extra Fruit");
+                }
+            }
+        });
+
         frame.add(fruitScroll);
+        frame.add(label);
+        frame.add(buy);
+        frame.add(manage);
         frame.setVisible(true);
     }
 
