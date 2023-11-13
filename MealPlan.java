@@ -30,23 +30,17 @@ public class MealPlan {
 
         dorms.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent event) {
-                int i = event.getSource().getSelectedIndex();
-                switch (i) {
-                    case 0:  output += 1500;
-                             break;
-                    case 1:  output += 1600;
-                             break;
-                    case 2:  output += 1200;
-                             break;
-                    case 3:  output += 1800;
-                             break;
-                }
+                int i = dorms.getSelectedIndex();
+                if (i == 0) output += 1500;
+                else if (i == 1) output += 1600;
+                else if (i == 2) output += 1200;
+                else output += 1800;
                 total.setText(output + " for this semester.");
             }
         });
         meals.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent event) {
-                int i = event.getSource().getSelectedIndex();
+                int i = meals.getSelectedIndex();
                 switch (i) {
                     case 0:  output += 560;
                              break;
@@ -68,7 +62,7 @@ public class MealPlan {
 
     public static void main(String args[]) {
         SwingUtilities.invokeLater(new Runnable() {
-            public run() {
+            public void run() {
                 new MealPlan();
             }
         });
