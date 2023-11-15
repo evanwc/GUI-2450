@@ -37,22 +37,22 @@ public class SpinnerDemo {
         colorSpinner.setPreferredSize(new Dimension(60, 20));
 
         colorSpinner.addChangeListener(new ChangeListener() {
-            public void stateChagned(ChangeEvent e) {
+            public void stateChanged(ChangeEvent e) {
                 String colorChoice = (String) colorSpinner.getValue();
                 lab1.setText("Color selected: " + colorChoice);
                 if (colorChoice.equals("blue")) pane.setBackground(Color.blue);
                 else if (colorChoice.equals("green")) pane.setBackground(Color.green);
                 else if (colorChoice.equals("red")) pane.setBackground(Color.red);
                 else if (colorChoice.equals("white")) pane.setBackground(Color.white);
-                else if (colorChoice.equals("teal")) pane.setBackground(Color.teal);
+                else if (colorChoice.equals("teal")) pane.setBackground(Color.orange);
                 else if (colorChoice.equals("black")) pane.setBackground(Color.black);
             }
         });
 
-        SpinnerNumberModel model2 = new SpinnerNumberModel(1, 1, 10, 1);
-
         pane.add(lab1);
         pane.add(colorSpinner);
+
+        //SpinnerNumberModel model2 = new SpinnerNumberModel(1, 1, 10, 1);
 
         frame.add(pane);
         frame.setVisible(true);

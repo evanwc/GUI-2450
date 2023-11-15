@@ -2,12 +2,12 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class MealPlan {
+public class MealPlan implements ItemListener {
     JLabel label, total;
     JComboBox dorms, meals;
     
     MealPlan() {
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame("Dorm and Meal Plan");
         frame.setSize(400, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
@@ -25,39 +25,48 @@ public class MealPlan {
         dorms = new JComboBox<String>(dormList);
         meals = new JComboBox<String>(mealList);
 
-        int output = 0;
-        total = new JLabel("");
+        dorms.addItemListener(this);
+        meals.addItemListener(this);
 
-        dorms.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent event) {
-                int i = dorms.getSelectedIndex();
-                if (i == 0) output += 1500;
-                else if (i == 1) output += 1600;
-                else if (i == 2) output += 1200;
-                else output += 1800;
-                total.setText(output + " for this semester.");
-            }
-        });
-        meals.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent event) {
-                int i = meals.getSelectedIndex();
-                switch (i) {
-                    case 0:  output += 560;
-                             break;
-                    case 1:  output += 1095;
-                             break;
-                    case 2:  output += 1500;
-                             break;
-                }
-                total.setText(output + " for this semester.");
-            }
-        });
+        total = new JLabel("");
 
         frame.add(label);
         frame.add(dorms);
         frame.add(meals);
         frame.add(total);
         frame.setVisible(true);
+    }
+
+    public void itemStateChanged(ItemEvent e) {
+        int out = 0;
+        int i = dorms.getSelectedIndex();
+        int l = meals.getSelectedIndex();
+        switch (i) {
+            case 0: 
+                out += 1500;
+                break;
+            case 1: 
+                out += 1600;
+                break;
+            case 2: 
+                out += 1200;
+                break;
+            case 3: 
+                out += 1800;
+                break;
+        }
+        switch (l) {
+            case 0: 
+                out += 560;
+                break;
+            case 1: 
+                out += 1095;
+                break;
+            case 2: 
+                out += 1500;
+                break;
+        }
+        total.setText("\nTotal: $" + out);
     }
 
     public static void main(String args[]) {
