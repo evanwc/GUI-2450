@@ -7,12 +7,12 @@ import javax.swing.event.ListSelectionListener;
 
 public class ListModelDemo {
     JList fruit;
-    JLabel label;
+    JLabel name, label;
     JButton buy, manage;
 
     ListModelDemo() {
         JFrame frame = new JFrame("Default List Model Demo");
-        frame.setSize(300,300);
+        frame.setSize(400,300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
 
@@ -26,6 +26,7 @@ public class ListModelDemo {
         
         JScrollPane fruitScroll = new JScrollPane(fruit);
 
+        name = new JLabel("Evan Cheng 11/19/23");
         label = new JLabel("Select a fruit: ");
 
         fruit.addListSelectionListener(new ListSelectionListener() {
@@ -82,6 +83,7 @@ public class ListModelDemo {
             }
         });
 
+        frame.add(name);
         frame.add(fruitScroll);
         frame.add(label);
         frame.add(buy);
