@@ -13,6 +13,7 @@ public class ComboBoxDemo {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
 
+        JLabel name = new JLabel("Evan Cheng 11/19/23");
         JLabel label = new JLabel("Please make a selection.");
 
         DefaultComboBoxModel fruitCBM = new DefaultComboBoxModel();
@@ -61,6 +62,7 @@ public class ComboBoxDemo {
             }
         });
 
+        frame.add(name);
         frame.add(fruit);
         frame.add(remove);
         frame.add(label);

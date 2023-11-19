@@ -12,6 +12,7 @@ public class MealPlan implements ItemListener {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
 
+        JLabel name = new JLabel("Evan Cheng 11/19/23");
         label = new JLabel("Please select a dorm and meal plan:");
 
         String[] dormList = {"Allen hall: $1500 per semester" ,
@@ -30,6 +31,7 @@ public class MealPlan implements ItemListener {
 
         total = new JLabel("");
 
+        frame.add(name);
         frame.add(label);
         frame.add(dorms);
         frame.add(meals);

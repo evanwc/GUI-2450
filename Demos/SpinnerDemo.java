@@ -34,6 +34,7 @@ public class SpinnerDemo {
         pane = new JPanel();
         pane.setLayout(new FlowLayout());
 
+        JLabel name = new JLabel("Evan Cheng 11/19/23");
         lab1 = new JLabel("Select a color: ");
         lab2 = new JLabel("Select a border size: ");
 
@@ -72,6 +73,7 @@ public class SpinnerDemo {
         pane.add(lab2);
         pane.add(numSpinner);
 
+        frame.add(name);
         frame.add(pane);
         frame.setVisible(true);
     }

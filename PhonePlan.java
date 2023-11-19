@@ -13,6 +13,7 @@ public class PhonePlan implements ItemListener {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
 
+        JLabel name = new JLabel("Evan Cheng 11/19/23");
         label = new JLabel("Please select the purchased items (each phone model will have 6% tax added):");
         total = new JLabel("");
 
@@ -34,6 +35,7 @@ public class PhonePlan implements ItemListener {
         voicemail.addItemListener(this);
         text.addItemListener(this);
 
+        frame.add(name);
         frame.add(label);
         frame.add(packages);
         frame.add(phone);
