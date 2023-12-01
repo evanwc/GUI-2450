@@ -50,13 +50,12 @@ public class TextComp {
         tab1.add(label4);
         tab1.add(scroll);
 
-        String shrek = "Text courtesy of Bing AI: Shrek is a 2001 American animated fantasy comedy film loosely based on the 1990 children's picture book of the same name by William Steig.\\nThe film follows the adventures of an embittered ogre named Shrek who finds his home in the swamp overrun by fairy tale creatures banished by the obsessive ruler Lord Farquaad.\\nWith the help of Donkey, Shrek makes a pact with Farquaad to rescue Princess Fiona in exchange for regaining control of his swamp.\\nThe film stars Mike Myers, Eddie Murphy, Cameron Diaz, and John Lithgow.\\nShrek parodies other fairy tale adaptations, primarily animated Disney films.\\nThe film won the first ever Academy Award for Best Animated Feature.\\nShrek has since spawned several sequels and spin-offs.\\nThe character of Shrek has become a cultural icon and has been referenced in numerous films, TV shows, and video games.\\nThe name \"Shrek\" is derived from the German word Schreck, meaning \"fright\" or \"terror\".\\nShrek is a beloved character that has captured the hearts of audiences around the world.";
+        String shrek = "Text courtesy of Bing AI: Shrek is a 2001 American animated fantasy comedy film loosely based on the 1990 children's picture book of the same name by William Steig.\nThe film follows the adventures of an embittered ogre named Shrek who finds his home in the swamp overrun by fairy tale creatures banished by the obsessive ruler Lord Farquaad.\nWith the help of Donkey, Shrek makes a pact with Farquaad to rescue Princess Fiona in exchange for regaining control of his swamp.\nThe film stars Mike Myers, Eddie Murphy, Cameron Diaz, and John Lithgow.\\nShrek parodies other fairy tale adaptations, primarily animated Disney films.\nThe film won the first ever Academy Award for Best Animated Feature.\\nShrek has since spawned several sequels and spin-offs.\nThe character of Shrek has become a cultural icon and has been referenced in numerous films, TV shows, and video games.\nThe name \"Shrek\" is derived from the German word Schreck, meaning \"fright\" or \"terror\".\nShrek is a beloved character that has captured the hearts of audiences around the world.";
         JTextPane tab2 = new JTextPane();
         StyledDocument doc = tab2.getStyledDocument();
         Style style = tab2.addStyle(shrek, null);
 
-        JEditorPane tab3 = new JEditorPane();
-        tab3.setPage("https://www.google.com/");
+        JEditorPane tab3 = new JEditorPane("https://www.google.com/");
 
         jtb.addTab("Basic Components", tab1);
         jtb.addTab("Text Pane", tab2);
