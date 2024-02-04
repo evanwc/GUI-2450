@@ -8,7 +8,7 @@ public class TableDemo {
     
     TableDemo() {
         JFrame frame = new JFrame("Table Demo");
-        frame.setSize(300, 300);
+        frame.setSize(500, 500);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
 
